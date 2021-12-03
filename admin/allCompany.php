@@ -3,6 +3,10 @@ include('include/header.php');
 include('include/sidebar.php');
 require_once 'Controller/CompanyController.php';
 $companys = getAllCompany();
+if(isset($_REQUEST["deleteId"])){
+  $deleteId= $_REQUEST["deleteId"];
+  deleteComapny($deleteId);
+}
 ?>    
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
@@ -39,10 +43,7 @@ $companys = getAllCompany();
 					echo "<td>".$company["info"]."</td>";
           echo "<td>".$company["phn"]."</td>";
           echo "<td>".$company["mail"]."</td>";
-          echo "<td>".$company["addr"]."</td>";
-        
-	
-		
+          echo "<td>".$company["addr"]."</td>";	
 				echo '<td><a href="allCompany.php?deleteId='.$company["cid"].'" class="btn btn-danger">Delete</a></td>';
 					echo "</tr>";
 				}

@@ -17,5 +17,10 @@
 		$students = getArray($query);
 		return $students;
 	}
+    function deleteStudent($sid){
+		$query="DELETE FROM student WHERE sid=".$sid."";
+		execute($query);
+		header("Location: allStudent.php");
+	}
 	
 ?>

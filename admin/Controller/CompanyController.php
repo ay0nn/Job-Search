@@ -18,4 +18,15 @@
 		return $companys;
 	}
 	
+	function getCompany($cid){
+		$query="SELECT * FROM company WHERE cid=$cid";
+		$companys=getArray($query);
+		return $companys[0];
+	}
+
+	function deleteComapny($cid){
+		$query="DELETE FROM company WHERE cid=".$cid."";
+		execute($query);
+		header("Location: allCompany.php");
+	}
 ?>
