@@ -16,9 +16,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="allstudent.php">
               <span data-feather="shopping-cart"></span>
-              Products
+              Students
             </a>
           </li>
           <li class="nav-item">
