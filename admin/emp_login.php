@@ -9,7 +9,7 @@ require_once 'Controller/LoginController.php';
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Login</title>
+    <title>Company Login</title>
 
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -41,21 +41,21 @@ require_once 'Controller/LoginController.php';
   </head>
   <body class="text-center">
     
-  <main class="form-signin" id="admin_login">
+  <main class="form-signin" id="">
   <form method="POST" action="" name="">
-    <h1 class="h3 mb-3 fw-normal">Admin Log in</h1>
+    <h1 class="h3 mb-3 fw-normal">Company Login</h1>
 
     <div class="form-floating">
-      <input type="email" name="admin_email" class="form-control" id="admin_email" placeholder="Email address">
-      <label for="floatingEmail">Email address</label>
+      <input type="email" name="mail" class="form-control" id="mail" placeholder="Email address">
+      <label for="floatingEmail">Company mail address</label>
     </div>
     <div class="form-floating">
-      <input type="password" name="admin_pass" class="form-control" id="admin_pass" placeholder="Password" >
+      <input type="password" name="pass" class="form-control" id="pass" placeholder="Password" >
       <label for="floatingPassword">Password</label>
     </div>
 
-    <input class="w-100 btn btn-lg btn-primary" name="login" id="submit" type="submit" placeholder="">
-    <a href="emp_login.php">Log in as employer!</a>
+    <input class="w-100 btn btn-lg btn-primary" name="Clogin" id="submit" type="submit" placeholder="">
+  
     <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
   </form>
 </main>

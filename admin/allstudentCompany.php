@@ -1,12 +1,9 @@
 <?php
 include('include/header.php');
-include('include/sidebar.php');
+include('include/Esidebar.php');
 require_once 'Controller/StudentController.php';
 $students = getAllStudent();
-if(isset($_REQUEST["deleteId"])){
-  $deleteId= $_REQUEST["deleteId"];
-  deleteStudent($deleteId);
-}
+
 ?>    
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
@@ -32,7 +29,6 @@ if(isset($_REQUEST["deleteId"])){
                     <th>Address</th>
                     <th>Email</th>
                     <th>Expertise</th>
-                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -47,7 +43,7 @@ if(isset($_REQUEST["deleteId"])){
           echo "<td>".$student["address"]."</td>";
           echo "<td>".$student["user_mail"]."</td>";
           echo "<td>".$student["expertise"]."</td>";
-          echo '<td><a href="allStudent.php?deleteId='.$student["sid"].'" class="btn btn-danger">Delete</a></td>';
+         // echo '<td><a href="allStudent.php?deleteId='.$student["sid"].'" class="btn btn-danger">Delete</a></td>';
 					echo "</tr>";
 				}
 			?>

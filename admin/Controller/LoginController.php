@@ -23,7 +23,7 @@
 			$admin_pass = $_POST["admin_pass"];
 		}
 	}
-	
+	// Admin Login
 	if(isset($_POST["login"])){
 		//validation
 		if(!$hasError){
@@ -44,7 +44,7 @@
 		return $user;
 	}
 	function insertUser($name,$username,$email,$phone,$address,$password){
-		$password = md5($password);
+		//$password = md5($password);
 		$query = "INSERT INTO users VALUES(Null,'$name','$username','$email','$phone','$address','$password')";
 		execute($query);		
 	}
@@ -54,5 +54,27 @@
 		$user=getArray($query);
 		return $user;
 	}
+
+
+	// Company Login
+
+		if(isset($_POST["Clogin"])){
+			
+				if(Cauthenticate($_POST["mail"],$_POST["pass"])){
+					$_SESSION["c_name"]= $_POST["c_name"];
+				/*	setcookie('usertype','Type = Customer',time()+15);*/
+					header("Location:company_dashboard.php");
+					
+				}else{
+					echo '<script>alert("Invalid Username & Password")</script>';
+				}
+		
+		}
+		function Cauthenticate($mail,$pass){
+			//	$password = md5($password);
+				$query = "SELECT mail from company WHERE mail='$mail' and pass='$pass'";
+				$company=getArray($query);
+				return $company;
+			}
 
 ?>
