@@ -12,6 +12,8 @@ if(isset($_REQUEST["deleteId"])){
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
     <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <li class="breadcrumb-item"><a href="admin_dashboard.php">Dashboard</a></li>
     <li class="breadcrumb-item active" aria-current="page">Company List</li>
   </ol>
@@ -22,6 +24,7 @@ if(isset($_REQUEST["deleteId"])){
         <div class="btn-toolbar mb-2 mb-md-0"> 
         </div>
       </div>
+      <input type="text" class="form-control" name="" id="search">
     <table id="example" class="display" style="width:100%">
             <thead>
                 <tr>
@@ -34,7 +37,7 @@ if(isset($_REQUEST["deleteId"])){
                     <th>Action</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="output">
 			<?php
 				foreach($companys as $company){
 					echo "<tr>";
@@ -62,14 +65,22 @@ if(isset($_REQUEST["deleteId"])){
 "></script>
 <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js
  "></script>
-
- <script>
-     $(document).ready(function() {
-    $('#example').DataTable();
-} );
- </script>
-
-  
-
+<script>
+  $(document).ready(function(){
+ 
+$("#search").keypress(function(){
+  $.ajax({
+    type:'POST',
+    url:'search.php',
+    data:{
+      name:$("#search").val(),
+    },
+    success:function(data){
+      $("#output").html(data);
+    }
+  });
+});
+  });
+</script>
 </body>
 </html>

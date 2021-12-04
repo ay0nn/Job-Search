@@ -1,3 +1,6 @@
+<?php
+ require_once 'admin/Model/dbconnect.php';
+?>
 <!doctype html>
 <html class="no-js" lang="zxx">
     <head>
@@ -95,41 +98,33 @@
             <div class="slider-active">
                 <div class="single-slider slider-height d-flex align-items-center" data-background="assets/img/hero/h1_hero.jpg">
                     <div class="container">
-                        <div class="row">
+                  
+                    <div class="row">
                             <div class="col-xl-6 col-lg-9 col-md-10">
-                                <div class="hero__caption">
-                                    <h2>Find your fresh graduate here for their startup jobs</h2>
+                                <div class="hero_caption">
+                                <h2>Find your fresh graduate here for their startup jobs</h2>
+                                    <div class="figure">
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase">Total Companies: </div>
+                                <div class="h5 mb-0 font-weight-bold text-grey-800" >
+                                <?php
+                                $query = "SELECT cid FROM company ORDER by cid";
+                                $num = getRow($query);
+
+                                echo '<h2>'.$num.'</h2>';
+                                ?> 
+                                <div class="text-xs font-weight-bold text-primary text-uppercase">Job Seekers: </div>
+                                <div class="">
+                                <?php
+                                $query = "SELECT sid FROM student ORDER by sid";
+                                $num = getRow($query);
+                                echo '<h2>'.$num.'</h2>';
+                                ?>  
+                              </div>
+                                </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Search Box -->
-                        <div class="row">
-                            <div class="col-xl-8">
-                                <!-- form -->
-                                <form action="#" class="search-box">
-                                    <div class="input-form">
-                                        <input type="text" placeholder="Job Tittle or keyword">
-                                    </div>
-                                    <div class="select-form">
-                                        <div class="select-itms">
-                                            <select name="select" id="select1">
-                                                <option value="">Location BD</option>
-                                                <option value="">Location PK</option>
-                                                <option value="">Location US</option>
-                                                <option value="">Location UK</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="search-form">
-                                        <a href="#">Find job</a>
-                                    </div>	
-                                </form>	
-                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
  
   <!-- JS here -->
 	

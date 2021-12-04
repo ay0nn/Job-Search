@@ -29,7 +29,12 @@
 		if(!$hasError){
 			//authenticate
 			if(authenticate($_POST["admin_email"],$_POST["admin_pass"])){
-				$_SESSION["admin_email"]= $_POST["admin_email"];
+			
+				//$query= "SELECT admin_username from admin_login WHERE admin_email = ".$_POST["admin_email"];
+				$query = "SELECT admin_username FROM admin_login WHERE admin_email = ".$_POST['admin_email']."";
+
+				$_SESSION["admin_username"] = getResult($query);
+
 			/*	setcookie('usertype','Type = Customer',time()+15);*/
 				header("Location:admin_dashboard.php");
 				
