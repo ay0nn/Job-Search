@@ -46,8 +46,8 @@ if(isset($_REQUEST["deleteId"])){
           echo "<td>".$student["phn"]."</td>";
           echo "<td>".$student["address"]."</td>";
           echo "<td>".$student["user_mail"]."</td>";
-          echo "<td>".$student["expertise"]."</td>";
-          echo '<td><a href="allStudent.php?deleteId='.$student["sid"].'" class="btn btn-danger">Delete</a></td>';
+          echo "<td>".$student["expertise"]."</td>";  echo '<td><a href="allStudent.php?deleteId='.$student["sid"].'" class="btn btn-danger">Delete</a></td>';
+        
 					echo "</tr>";
 				}
 			?>
