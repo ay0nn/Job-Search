@@ -14,7 +14,6 @@ if(isset($_REQUEST["deleteId"])){
   <ol class="breadcrumb">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <li class="breadcrumb-item"><a href="admin_dashboard.php">Dashboard</a></li>
     <li class="breadcrumb-item active" aria-current="page">Company List</li>
   </ol>
 </nav>
@@ -24,7 +23,7 @@ if(isset($_REQUEST["deleteId"])){
         <div class="btn-toolbar mb-2 mb-md-0"> 
         </div>
       </div>
-      <input type="text" class="form-control" name="" id="search">
+     
     <table id="example" class="display" style="width:100%">
             <thead>
                 <tr>
@@ -65,22 +64,10 @@ if(isset($_REQUEST["deleteId"])){
 "></script>
 <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js
  "></script>
-<script>
-  $(document).ready(function(){
- 
-$("#search").keypress(function(){
-  $.ajax({
-    type:'POST',
-    url:'search.php',
-    data:{
-      name:$("#search").val(),
-    },
-    success:function(data){
-      $("#output").html(data);
-    }
-  });
-});
-  });
-</script>
+ <script>
+     $(document).ready(function() {
+    $('#example').DataTable();
+} );
+ </script>
 </body>
 </html>

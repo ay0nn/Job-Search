@@ -17,5 +17,10 @@
 		$admins = getArray($query);
 		return $admins;
 	}
+	function deleteAdmin($id){
+		$query="DELETE FROM admin_login WHERE id=".$id."";
+		execute($query);
+		header("Location: admin_moderator.php");
+	}
 	
 ?>
