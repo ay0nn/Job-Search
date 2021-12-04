@@ -29,7 +29,7 @@
 		if(!$hasError){
 			//authenticate
 			if(authenticate($_POST["admin_email"],$_POST["admin_pass"])){
-				$_SESSION["admin_username"]= $_POST["admin_username"];
+				$_SESSION["admin_email"]= $_POST["admin_email"];
 			/*	setcookie('usertype','Type = Customer',time()+15);*/
 				header("Location:admin_dashboard.php");
 				
@@ -61,7 +61,7 @@
 		if(isset($_POST["Clogin"])){
 			
 				if(Cauthenticate($_POST["mail"],$_POST["pass"])){
-					$_SESSION["c_name"]= $_POST["c_name"];
+					$_SESSION["user"]= $_POST["mail"];
 				/*	setcookie('usertype','Type = Customer',time()+15);*/
 					header("Location:company_dashboard.php");
 					
