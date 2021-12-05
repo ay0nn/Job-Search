@@ -30,7 +30,7 @@
 		header("Location: allCompany.php");
 	}
 
-	if(isset($_POST["edit_company"])){
+	if(isset($_POST["id"])){
 		//update food
 		updateCompany($_POST["cid"],$_POST["c_name"],$_POST["info"],$_POST["phn"],$_POST["mail"],$_POST["addr"],$_POST["pass"]);
 	}

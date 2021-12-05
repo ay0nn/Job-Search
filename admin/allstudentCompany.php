@@ -15,7 +15,7 @@ $students = getAllStudent();
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
       <h1 class="h2">Fresh Graduate Info</h1>
         <div class="btn-toolbar mb-1 mb-md-0"> 
-          <a href="" class="btn btn-success">Post Job</a>
+          <a href="JobRegister.php" class="btn btn-success">Post Job</a>
         </div>
       </div>
     <table id="example" class="display" style="width:100%">

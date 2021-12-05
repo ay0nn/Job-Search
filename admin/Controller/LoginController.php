@@ -1,6 +1,6 @@
 <?php
 	SESSION_START(); 
-	require_once 'Model/dbconnect.php';
+	include 'Model/dbconnect.php';
 	$admin_email="";
 	$err_name="";
 	$admin_pass="";
@@ -67,8 +67,11 @@
 			
 				if(Cauthenticate($_POST["mail"],$_POST["pass"])){
 					$_SESSION["user"]= $_POST["mail"];
+			
 				/*	setcookie('usertype','Type = Customer',time()+15);*/
-					header("Location:company_dashboard.php");
+				echo '<script>alert("Successfully login")</script>';	
+				header("Location:company_dashboard.php");
+					
 					
 				}else{
 					echo '<script>alert("Invalid Username & Password")</script>';

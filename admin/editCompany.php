@@ -1,8 +1,8 @@
 <?php 
     SESSION_START();
 	require_once 'Controller/CompanyController.php';
-	$cid = $_REQUEST["cid"];
-	$company = getCompany($cid);
+	$id = $_REQUEST["id"];
+	$company = getCompany($id);
 	
 ?>
 <!--edit category starts -->
