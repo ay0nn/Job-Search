@@ -55,6 +55,7 @@ require_once 'Controller/LoginController.php';
     </div>
 
     <input class="w-100 btn btn-lg btn-primary" name="Clogin" id="submit" type="submit" placeholder="">
+    <a href="CompanyRegister.php">Register here!</a>
   
     <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
   </form>

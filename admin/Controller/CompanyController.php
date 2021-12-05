@@ -1,15 +1,15 @@
 <?php
 	require_once 'Model/dbconnect.php';
 
-	if(isset($_POST["add_company"])){
-		insertStudent($_POST["name"],$_POST["uni_name"],$_POST["cgpa"],$_POST["phn"],$_POST["address"],$_POST["user_mail"],$_POST["pass"],$_POST["expertise"]);
+	if(isset($_POST["add_com"])){
+		insertCompany($_POST["c_name"],$_POST["info"],$_POST["phn"],$_POST["mail"],$_POST["addr"],$_POST["pass"]);
 	}
 
-	function insertStudent($name,$uni_name,$cgpa,$phn,$address,$pass,$expertise){	
-		$query = "INSERT INTO student VALUES(Null,'$name','$uni_name','$cgpa','$phn','$address','$pass','$expertise')";
+	function insertCompany($c_name,$info,$phn,$mail,$addr,$pass){	
+		$query = "INSERT INTO company VALUES(Null,'$c_name','$info','$phn','$mail','$addr','$pass')";
 		execute($query);
-		header("Location:admin_moderator.php");
-		echo '<script>alert("New Admin/Moderator Added")</script>';
+		header("Location:emp_login.php");
+		echo '<script>alert("Successfully Added")</script>';
 					
 	}
 	function getAllCompany(){

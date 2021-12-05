@@ -62,13 +62,6 @@
                                             <li><a href="job_listing.html">Find a Jobs </a></li>
                                             <li><a href="about.html">About</a></li>
                                             <li><a href="#">Page</a>
-                                                <ul class="submenu">
-                                                    <li><a href="blog.html">Blog</a></li>
-                                                    <li><a href="single-blog.html">Blog Details</a></li>
-                                                    <li><a href="elements.html">Elements</a></li>
-                                                    <li><a href="job_details.html">job Details</a></li>
-                                                </ul>
-                                            </li>
                                             <li><a href="contact.html">Contact</a></li>
                                         </ul>
                                     </nav>
@@ -99,27 +92,29 @@
                 <div class="single-slider slider-height d-flex align-items-center" data-background="assets/img/hero/h1_hero.jpg">
                     <div class="container">
                             <div class="col-xl-6 col-lg-9 col-md-10">
-                                <div class="hero_caption">
+                                <div class="navigation">
                                 <h1>Find your fresh graduate here for their startup jobs</h1>
-                                    <div class="figure">
-                                    <div class="text-xs font-weight-bold text-primary text-uppercase">Total Companies: </div>
-                                <div class="h5 mb-0 font-weight-bold text-grey-800" >
+                                  
+                                    <div class="center text font-weight-bold text-primary text-uppercase">Total Companies:
                                 <?php
                                 $query = "SELECT cid FROM company ORDER by cid";
                                 $num = getRow($query);
-
                                 echo '<h2>'.$num.'</h2>';
                                 ?> 
+                               
                                 <div class="text-xs font-weight-bold text-primary text-uppercase">Job Seekers: </div>
-                                <div class="">
                                 <?php
                                 $query = "SELECT sid FROM student ORDER by sid";
                                 $num = getRow($query);
                                 echo '<h2>'.$num.'</h2>';
                                 ?>  
+                                  <div class="text-xs font-weight-bold text-primary text-uppercase">Job Catagories: </div>
+                                <?php
+                                $query = "SELECT jid FROM Jcategory ORDER by jid";
+                                $num = getRow($query);
+                                echo '<h2>'.$num.'</h2>';
+                                ?>  
                               </div>
-                                </div>
-                                </div>
                             </div>
                         </div>
                         </div>
